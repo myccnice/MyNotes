@@ -29,3 +29,7 @@
 11)git rm <file>
   用git的方式删除工作区文件。如果确认要删除该文件使用git commit提交到到版本库，文件就真的从版本库中删除了。如果后悔了可以使用git checkout -- <file>将文件从版本库中恢复。
   git checkout 可以说是git中的“一键还原”。
+12)git remote add origin git@github.com:username/repository.git
+  将本地版本库和远程版本库进行关联，其中username为git用户名，repository为仓库名称。
+13)git push -u origin master
+  git push是将本地仓库中的内容推送到远程仓库。由于远程仓库是空的，所有需要使用-u参数将本地master分支和远程master分支进行关联。关联以后的推送命令就直接使用git push origin master.
