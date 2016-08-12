@@ -33,3 +33,7 @@
   将本地版本库和远程版本库进行关联，其中username为git用户名，repository为仓库名称。
 13)git push -u origin master
   git push是将本地仓库中的内容推送到远程仓库。由于远程仓库是空的，所有需要使用-u参数将本地master分支和远程master分支进行关联。关联以后的推送命令就直接使用git push origin master.
+14)git branch dev 创建dev分支。
+15)git checkout dev 切换到dev分支。
+16)git checkout -b dev 创建并切换到dev分支。
+17)git branch 查看当前所以分支，带*的表示当前工作空间所在分支。
