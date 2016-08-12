@@ -11,4 +11,14 @@
 	$ git init
 
 问题2：git的status/commit等输出中文时显示乱码
-解决方案：git config --global core.quotepath false
+解决方案：git config --global core.quotepath false.
+
+问题3：git pull/push时每次都提示要求输入用户名和密码。
+解决方法：
+	Windows平台：
+	    $cd     						//进入到用户主目录
+	    $touch .git-credentials				//创建一个名为.git-credentials的文件
+	    $vim .git-credentials				//在文件中写入下面的内容
+	    $https://{username}:{password}@github.com		//其中username替换为自己的用户名，password替换为对应的密码
+	    $git config --global credential.helper store	//设置存储密码。此时查看.gitconfig文件，会多了一项：[credential] helper = store
+	    // 以上操作完成后，退出git bash重新进入git push/pull不再需要输入用户名和密码。
