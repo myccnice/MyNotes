@@ -12,6 +12,10 @@
 	#登录github在右上角点击"View profile and more"下拉箭头，选择Settings，点击左边的"SSH and GPG keys"。
 	#点击SSH keys左边的"New SSH key"按钮，出现Title和Key两个输入域，Title是你自己命的名字，Key里粘贴上刚刚复制的秘钥。
 	#点击"Add SSH key"完成SSH KEYS配置。
+	第三步：测试是否配置成功
+	$ ssh -T git@github.com
+	#首次连接需要你确认。输入yes。
+	#如果输出:Hi xxxx You've successfully authenticated, but GitHub does not provide shell access.表示配置成功。
 
 问题1：执行命令$git add readme.txt 添加文件是出现如下提示：
 	warning: LF will be replaced by CRLF in readme.txt.
