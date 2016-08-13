@@ -1,15 +1,18 @@
 问题0：git bash配置SSH KEYS
-	$ cd 						// 进入到用户主目录
-	$ ls -ah 					// 显示主目录下所有文件，查看是否存在.ssh文件夹
-	$ mkdir .ssh					// 如果没有则创建
+	步骤一：使用git bash生成秘钥
+	$ cd	#进入到用户主目录
+	$ ls -ah	#显示主目录下所有文件，查看是否存在.ssh文件夹。
+	$ mkdir .ssh	#如果没有则创建。
 	$ cd .ssh
-	$ ssh-keygen -t rsa -C "your_email@example.com" // 需要把邮件地址替换为你自己的github邮件地址，然后一路回车即可
-	$ ls -ah
-	$ clip id_rsa.pub				// 复制id_rsa.pub中的内容
-	#这时你会看到id_rsa和id_rsa.pub。这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+	$ ssh-keygen -t rsa -C "your_email@example.com" #需要把邮件地址替换为你自己的github邮件地址，然后一路回车即可。
+	$ ls -ah	#这时你会看到id_rsa和id_rsa.pub。
+			#这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+	$ clip id_rsa.pub	#复制id_rsa.pub中的内容。
+	步骤二：登录github设置秘钥
 	#登录github在右上角点击"View profile and more"下拉箭头，选择Settings，点击左边的"SSH and GPG keys"。
 	#点击SSH keys左边的"New SSH key"按钮，出现Title和Key两个输入域，Title是你自己命的名字，Key里粘贴上刚刚复制的秘钥。
 	#点击"Add SSH key"完成SSH KEYS配置。
+
 问题1：执行命令$git add readme.txt 添加文件是出现如下提示：
 	warning: LF will be replaced by CRLF in readme.txt.
 	The file will have its original line endings in your working directory.
@@ -18,7 +21,7 @@
 	而在Linux/UNIX系统中只有换行符。也就是说在windows中的换行符为 CRLF， 而在linux下的换行符为：LF。
 	使用git来生成一个工程后，文件中的换行符为LF， 当执行git add 时，系统提示：LF 将被转换成 CRLF。
 解决方法：
- 	$rm .git
+ 	$ rm .git
 	$ git config --gobal core.autocrlf false
 	$ git init
 
@@ -28,9 +31,9 @@
 问题3：git pull/push时每次都提示要求输入用户名和密码。
 解决方法：
 	Windows平台：
-	    $cd     						//进入到用户主目录
-	    $touch .git-credentials				//创建一个名为.git-credentials的文件
-	    $vim .git-credentials				//在文件中写入下面的内容
-	    $https://{username}:{password}@github.com		//其中username替换为自己的用户名，password替换为对应的密码
-	    $git config --global credential.helper store	//设置存储密码。此时查看.gitconfig文件，会多了一项：[credential] helper = store
-	    // 以上操作完成后，退出git bash重新进入git push/pull不再需要输入用户名和密码。
+	    $ cd	#进入到用户主目录
+	    $ touch .git-credentials	#创建一个名为.git-credentials的文件
+	    $ vim .git-credentials	#在文件中写入下面的内容：https://{username}:{password}@github.com
+	    				#其中username替换为自己的用户名，password替换为对应的密码
+	    $ git config --global credential.helper store	#设置存储密码。此时查看.gitconfig文件，会多了一项：[credential] helper = store
+	    # 以上操作完成后，退出git bash重新进入git puh/pull不再需要输入用户名和密码。
