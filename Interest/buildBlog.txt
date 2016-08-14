@@ -1,0 +1,6 @@
+2016-08-13
+参考资料：
+	[1]http://www.tuicool.com/articles/MbI7RzR
+	[2]http://ibruce.info/2013/11/22/hexo-your-blog/
+域名解析：dnspod
+静态图片：七牛
