@@ -52,3 +52,21 @@
   	恢复储藏编号为id的储藏到当前工作区。如果储藏列表只有一个可以省略stash@{id}。这种方式恢复的stash内容并不删除，你需要用git stash drop来删除。
   22.2)git stash pop
   	恢复储藏并删除stash内容。
+
+2016-08-14
+23)标签相关
+  23.1)git tag <name> [commit_id]
+        新建一个名字叫name的标签，默认在当前提交HEAD上打标签，也可以指定一个commit id，则在指定提交上打标签。
+  23.2）git tag -a <name> -m "xxx"
+        -a指定标签名称，-m指定标签备注。
+  23.3)git tag
+  	查看所有标签。
+  23.4)git show <tagname>
+  	显示标签tagname的详细信息。
+  23.5)git tag -d <tagname>
+  	删除本地名为tagname的标签。
+  23.6)git push origin [--tags|tagname]
+  	将本地全部标签(--tags)或者名称为tagname的标签推送到远程仓库。
+  23.7)删除远程仓库的标签，分为两个步骤。一删除本地仓库中的标签，然后推送删除远程标签。
+  	$ git tag -d <tagname> #删除本地标签
+	$ git push origin ;refs/tags/<tagname> #推送到远程，删除远程分支的标签。
