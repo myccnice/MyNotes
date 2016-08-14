@@ -70,3 +70,8 @@
   23.7)删除远程仓库的标签，分为两个步骤。一删除本地仓库中的标签，然后推送删除远程标签。
   	$ git tag -d <tagname> #删除本地标签
 	$ git push origin ;refs/tags/<tagname> #推送到远程，删除远程分支的标签。
+24)忽略文件
+  24.1)git add -f <filename>
+  	强制添加被.gitignore忽略的文件。
+  24.2)git check-ignore -v <filename>
+  	查看文件filename是否被.gitignore忽略。
