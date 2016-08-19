@@ -1,2 +1,3 @@
 算法题库leetcode:
 https://leetcode.com/problemset/algorithms/
+http://www.acmerblog.com/category/basis/page/123
