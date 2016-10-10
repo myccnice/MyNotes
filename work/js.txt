@@ -1,0 +1,39 @@
+#这里记录了我平时工作中常用的js相关的知识点
+2016-10-10
+Q、遍历JSON数组
+    以下列JSON数组为例：var jsonArray = [{key1:"key1-1",key2:"key2-1"},{key1:"key1-2",key2:"key2-2"}];
+    1、for循环遍历：这是原生的JS可以实现的
+	for (var i = 0; i < jsonArray.length; i++) {
+	    var json = jsonArray[i];
+	    //console.log(JSON.stringify(json));
+	}
+    2、for in循环遍历
+	for （var p in jsonArray）{
+	    var json = jsonArray[p];
+	    //...
+	}
+    3、jQury each遍历
+	$.each(function(i,value){
+	    // 其中i为数组下标，value为该下标对应的值
+	    var json = value;
+	});
+
+Q、我司select转化为filterselect。一般的使用场景是级联动态加载，即一级目录的值change后，二级需要动态加载下拉可输入的select。
+    这里记录一个例子：后台添加机位中，机房变动后需要动态加载该机房的机柜信息。
+        $("#idcId").change(function(){
+	    var idcId = $(this).val();
+	    $.post("/admin/product/pub/res!ajaxLoadCab.action", {"idx":idcId},function(res){
+	        var result = res["result"];
+		var $cabId = $("#cabId").empty();
+		var options = '<option value="0">请选择机柜号</option>';
+		if (result) {
+		    for (var i = 0; i < result.length; i++){
+			var cur = result[i];
+			options += ('<option value="' + cur["id"] + '">' + cur["cabNo"] + '</option>');
+		    }
+		 }
+		 $cabId.append(options);
+		 $("#sfilter_divcabId").remove();
+		 $cabId.sfilter();
+	     }, 'json');
+	 });
