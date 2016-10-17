@@ -26,7 +26,7 @@
 	使用git来生成一个工程后，文件中的换行符为LF， 当执行git add 时，系统提示：LF 将被转换成 CRLF。
 解决方法：
  	$ rm .git
-	$ git config --gobal core.autocrlf false
+	$ git config --global core.autocrlf false
 	$ git init
 
 问题2：git的status/commit等输出中文时显示乱码
