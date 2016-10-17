@@ -1,4 +1,6 @@
 # This file record some usefull web site or key word.
 1. Coursera:mooc platform
 2. 万门大学：在线教育平台
-3. hibernate:https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
+3. hibernate:
+	https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
+	https://docs.jboss.org/hibernate/orm/3.5/reference/zh-CN/html/tutorial.html
