@@ -1,3 +1,4 @@
 # This file record some usefull web site or key word.
 1. Coursera:mooc platform
-2. ÍòÃÅ´óÑ§£ºÔÚÏß½ÌÓıÆ½Ì¨
+2. ä¸‡é—¨å¤§å­¦ï¼šåœ¨çº¿æ•™è‚²å¹³å°
+3. hibernate:https://www.tutorialspoint.com/hibernate/hibernate_examples.htm
