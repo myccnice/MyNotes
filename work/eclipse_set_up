@@ -1,0 +1,13 @@
+#工作中Eclipse的常用设置
+一、字体设置
+    Window ->Preferences ->General ->Apperrance ->"Colors and Fonts" ->Basic ->"Text Font"
+    点击右边的【Edit】按钮：字体选择【Courier New】，字形【常规】，大小【小四】
+
+二、Tab键修改为用4个空格替换
+    Window ->Preferences ->General ->Editors ->"Text Editors"
+    1、右边的选项【Insert spaces for tabs】勾上，然后 【Displayed tab width】设置为4；
+    2、右边的选项【Show wihtespace characters】勾上，点击右侧的"configure visibility";
+    3、在弹出框中，除了【Space(.)】行对应的Leading,Enclosed,Trailing三个复选框勾选上，其他都取消
+    Window ->Preferences ->Java ->"Code Style" ->Formatter
+    1、点击右边【Edit】按钮，在Indentation选项卡的General Settings中Tab policy，选择Space only；
+    2、最上面的Profile name输入自定义的名称，点击最下面的【Apply】【OK】
