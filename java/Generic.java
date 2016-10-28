@@ -57,7 +57,7 @@ public class Generic {
         List<Diamond> dList = new ArrayList<>();
         List<Square> sonList = new ArrayList<>();
         //? extends Diamond:只能传递Diamond，以及Diamond的子类
-        // 故：下面第一行编译错误，接下来两行正确
+        // 故：下面第一行编译报错，接下来两行正确
         testUpper(fatherList);
         testUpper(dList);
         testUpper(sonList);
