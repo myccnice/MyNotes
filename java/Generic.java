@@ -39,13 +39,13 @@ public class Generic {
     }
 
     /**
-     * super 关键字声明了类型的下界，表示参数化的类型可能是所指定的类型，或者是此类型的父类型，直至Object
+     * super 关键字声明了类型的下界，表示参数化的类型可能是所指定的类型，或者是此类型的超类，直至Object
      * @param lowerBound
      */
     public static void testLower(List<? super Diamond> lowerBound) {
         // 传入的实际参数可能是Diamond的父类，如List<Shape> list
         Diamond d2 = lowerBound.get(0);
-        // 编译报错：? super Diamond:表示可能是Diamond类，或者Diamond的父类，直至Object
+        // 编译报错：? super Diamond:表示可能是Diamond类，或者Diamond的超类，直至Object
         // 如果传入的类为Diamond那么Shape不是Diamond，故编译报错。但Diamond，Square一定是属于Diamond也属于Diamond的父类，所以下面两行正确
         lowerBound.add(new Shape());
         lowerBound.add(new Diamond());
