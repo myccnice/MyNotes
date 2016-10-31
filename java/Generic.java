@@ -52,6 +52,22 @@ public class Generic {
         lowerBound.add(new Square());
     }
 
+    /**
+     * 不能创建泛型数组
+     */
+    public static void testArrays() {
+	// 下面代码编译会报错
+	List<String>[] arr1 = new ArrayList<String>[2];
+	// 报错原因讲解
+	// 假设上面的代码编译通过
+	List<Interge> cell = new ArrayList<>();
+	cell.add(1);
+	// 如果不是泛型，那么运行时应该在下面这行报ArrayStoreException，但是由于泛型擦除后类型都是List,所以这行不会出错
+	arr1[0] = cell;
+	// 而是在这行报出：ClassCastException。这正是泛型应该避免的，所以不能创建泛型数组。
+	String s = arr1[0].get(0);
+    }
+
     public static void main(String[] args) {
         List<Shape> fatherList = new ArrayList<>();
         List<Diamond> dList = new ArrayList<>();
