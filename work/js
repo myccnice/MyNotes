@@ -30,7 +30,9 @@ Q、遍历JSON数组
 	});
 
 Q、我司select转化为filterselect。一般的使用场景是级联动态加载，即一级目录的值change后，二级需要动态加载下拉可输入的select。
-    这里记录一个例子：后台添加机位中，机房变动后需要动态加载该机房的机柜信息。
+    这里以我司后台添加机位为例：机房变动后需要动态加载该机房的机柜信息。
+    	// 机房下拉列表的id为idcId
+	// 机柜下拉列表的id为cabId
         $("#idcId").change(function(){
 	    var idcId = $(this).val();
 	    $.post("/admin/product/pub/res!ajaxLoadCab.action", {"idx":idcId},function(res){
@@ -44,7 +46,7 @@ Q、我司select转化为filterselect。一般的使用场景是级联动态加�
 		    }
 		 }
 		 $cabId.append(options);
-		 $("#sfilter_divcabId").remove();
+		 $("#sfilter_div" + "cabId").remove();
 		 $cabId.sfilter();
 	     }, 'json');
 	 });
