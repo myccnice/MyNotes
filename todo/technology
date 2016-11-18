@@ -2,3 +2,7 @@ mina
 netty
 memcached
 redis
+
+Http协议
+TCP/IP协议
+socket
