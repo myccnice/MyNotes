@@ -1,5 +1,6 @@
 安装环境：
     CentOS release 6.4 (Final)
+
 安装前提：
     1、安装gcc
     [root@localhost ~]$ yum install gcc-c++
