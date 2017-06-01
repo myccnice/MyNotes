@@ -1,0 +1,6 @@
+1、eclipse校验dubbo相关配置文件报错的解决方法：
+①、下载一个dubbo.xsd文件（dubbo.jar里面解压出来就有）
+②、Eclipse选择：windows->preferrence->xml->xmlcatalog 
+               add->catalog entry  ->file system 选择上面的xsd文件
+③、修改key值：http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+④、重新保存报错的配置文件，eclipse校验就OK了。
