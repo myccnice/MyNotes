@@ -2,10 +2,24 @@
     CentOS release 6.4 (Final)
 安装前提：
     1、安装gcc
-    [redis@localhost redis-3.2.9]$ yum install gcc-c++
+    [root@localhost ~]$ yum install gcc-c++
     2、need tcl 8.5 or newer
-    [redis@localhost redis-3.2.9]$ yum install tcl.x86_64
+    [root@localhost ~]$ yum install tcl.x86_64
 
 开始安装：
     1、从官网下载最新的稳定版，当前是redis-3.2.9.tar.gz
-
+    2、在服务器上创建redis用户
+    [root@localhost ~]# useradd -d /usr/redis -m redis
+    3、编译安装redis时会自动把redis的可执行文件放到/urs/local/bin目录下，所以要个redis用户该目录的权限
+    [root@localhost ~]# chown -R redis:redis /usr/local/bin
+    (或者直接使用root用户编译安装)
+    4、将当前用户切换为redis
+    [root@localhost home]# su redis
+    5、将下载的redis文件上传到redis用户主目录，并解压
+    [redis@localhost ~]$ cd
+    [redis@localhost ~]$ tar -xvf redis-3.2.9.tar.gz
+    6、进入redis的rsc目录进行编译安装
+    [redis@localhost ~]$ cd redis-3.2.9/src/
+    [redis@localhost src]$ make install
+    7、如果编译安装期间出错可以先清理，然后再次执行make install
+    [root@localhost ~]# make distclean
