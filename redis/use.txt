@@ -1,0 +1,6 @@
+1、启动
+    [root@localhost bin]# ./redis-server ../etc/redis.conf
+2、停止
+    [root@localhost bin]# redis-cli -p 6379 shutdown
+3、连接
+    [root@localhost bin]# redis-cli -h $ip -p $port
