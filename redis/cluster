@@ -1,5 +1,11 @@
 redis集群注意事项
-1、执行创建集群命令时一直等待在Waiting for the cluster to join 很久都没有反应
+1、启动redis出现如下警告：
+    1）WARNING overcommit_memory is set to 0!...
+    解决方案：echo 1 > /proc/sys/vm/overcommit_memory
+    2）WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+    解决方案：echo 511 > /proc/sys/net/core/somaxconn
+
+2、执行创建集群命令时一直等待在Waiting for the cluster to join 很久都没有反应
     原因：redis集群不仅需要开通redis客户端连接的端口，而且需要开通集群总线端口。
           集群总线端口为redis客户端连接的端口 + 10000。
 	  如redis端口为6379，则集群总线端口为16379。
