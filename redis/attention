@@ -2,3 +2,6 @@
 1、redis默认是以保护模式启动，只用本地可以连接。如果想要其他机器可连接需要设置：
     1)将需要连接的地址通过 bind $IP添加到redis.conf文件；或者注释掉所有的额bind
     2)将protected-mode配置为no
+
+2、操作集群时提示：(error) MOVED 9842
+    原因：客户端没有启动集群模式，使用redis-cli -c -p $port即可
