@@ -1,3 +1,6 @@
+Redis集群官网翻译：
+http://blog.csdn.net/tantexian/article/details/49925093
+http://blog.csdn.net/xiao______xin/article/details/52035194
 redis集群注意事项
 1、启动redis出现如下警告：
     1）WARNING overcommit_memory is set to 0!...
