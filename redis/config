@@ -1,0 +1,6 @@
+# 记录Redis配置参数的意义和用法
+
+# 集群是否需要完全覆盖。
+# 如果集群任意master挂掉,且当前master没有slave，此时集群的slot映射[0-16383]就没有被完全覆盖。
+# 如果该值被设置为true，集群就会进入fail状态。
+cluster-require-full-coverage
