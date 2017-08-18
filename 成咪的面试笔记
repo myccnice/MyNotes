@@ -1,0 +1,22 @@
+2017-08-15
+	1、union和union all的区别
+	2、left join和right join的区别
+
+2017-08-18
+环球雅途旅业控股集团有限公司-天府三街香年广场
+笔试：
+	1、修饰符的范围
+	2、Oracle默认用户有哪些
+	3、List list = new ArrayList(20);进行了几次扩容。
+	4、break使用方法
+	5、封装的理解
+	6、位图索引
+	7、io/nio
+	8、值传递和引用传递
+	9、ResultSet
+面试：
+	1、如何实现分页
+	2、如何复制数据库中现有表的结构
+	3、MVC原理(可能是问SpringMVC的原理)
+	4、SpringMVC
+	5、Struts2如何分包
