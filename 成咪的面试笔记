@@ -21,3 +21,23 @@
 	3、MVC原理(可能是问SpringMVC的原理)
 	4、SpringMVC
 	5、Struts2如何分包
+
+2017-08-24
+易达天成-天府新谷
+面试：
+	1、SpringMVC
+	2、事务如何使用
+	3、hibernate sql调优
+	4、hibernate 一级缓存、二级缓存
+	5、系统间的远程连接交互如何实现
+	6、aop与动态代理
+	7、aop的理解
+	
+2017-08-29
+平安保险：
+面试：
+	1、集合框架；HashMap的实现原理；Set的特点
+	2、sql调优
+	3、抛开所有框架如何实现aop
+	4、ajax返回值的类型；如何解析json；选择器
+	5、SpringMVC
