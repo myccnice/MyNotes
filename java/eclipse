@@ -1,0 +1,13 @@
+1、eclipse内使用tomcat项目究竟被部署到了哪里
+  eclipse并不像MyEclipse默认将项目部署到tomcat安装目录下的webapps中，而默认部署到工作目录(workspace)下的
+  .metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps中。（tmp0、tmp1的不同是目前这个server容器的顺序）
+2、如何修改eclipse内使用tomcat部署的位置
+  为了使项目默认部署到tomcat安装目录下的webapps中，show view->servers->找到需要修改的tomcat->右击
+  停止eclipse内的tomcat服务器（stop）
+  删除该容器中部署的项目(add and remove)
+  清除该容器相关数据(clean)
+  打开tomcat的修改界面(open)
+  找到servers location, 选择第二个(User tomcat Installation)
+  修改deploy path为webapps
+  保存关闭
+  (参考链接：https://www.cnblogs.com/shenpengyan/p/6095488.html)
