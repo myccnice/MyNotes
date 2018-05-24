@@ -11,3 +11,12 @@
   修改deploy path为webapps
   保存关闭
   (参考链接：https://www.cnblogs.com/shenpengyan/p/6095488.html)
+3、eclipse中tomcat不加载项目：
+ ①删除.setting文件
+ ②右键项目——>Properties——>Project Facets——>勾选Dynamic Web Modul、Java、JavaScript——>单击下方弹出的提示，
+  ——>单击Next,修改为WebRoot或者WebContenct，保存，刷新项目，清楚项目缓存和tomcat缓存，重新启动即可
+ 以上完成后依然无法加载，那可能是项目架构与eclipse不匹配，eclipse生成的项目中页面部分是WebContent，而项目中是/src/main/webapp路径下
+ 将.settings/org.eclipse.wst.common.component文件中的
+ <wb-resource deploy-path="/" source-path="WebContent" tag="defaultRootSource"/>
+ 替换为：
+ <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
