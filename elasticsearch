@@ -2,3 +2,16 @@
     1、http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html
     2、https://es.xiaoleilu.com/030_Data/05_Document.html
     3、https://www.jianshu.com/p/1e9e51454aa5
+    4、https://www.elastic.co/blog/index-type-parent-child-join-now-future-in-elasticsearch
+
+ES和关系型数据类比
+----------------—————--
+ ES概念   | 数据库概念
+-----------------------
+ Index    | 表
+-----------------------
+ Document | 记录
+-----------------------
+ Type     | 无
+-----------------------
+
