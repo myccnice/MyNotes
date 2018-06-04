@@ -15,3 +15,14 @@ ES和关系型数据类比
  Type     | 无
 -----------------------
 
+常见错误及处理方案：
+    1、使用命令： curl -XPUT 'localhost:9200/customer/external/1?pretty' -d ' {"name": "John Doe"}'
+       创建文档返回错误：
+       {
+         "error" : "Content-Type header [application/x-www-form-urlencoded] is not supported",
+	 "status" : 406
+       }
+
+       解决方案：指定header头即可
+       修改命令：curl -H "Content-Type: application/json" 'localhost:9200/customer/external/1?pretty' -d ' {"name": "John Doe"}'
+
