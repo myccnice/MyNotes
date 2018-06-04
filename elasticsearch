@@ -23,4 +23,7 @@ ES和关系型数据类比
 
     2、新增文档：curl -H 'Content-Type:application/json' -XPUT 'localhost:9200/accounts/person' -d '{"user": "张龙"}'
        报错如下：{"error":"Incorrect HTTP method for uri [/accounts/person] and method [PUT], allowed: [POST]","status":405}
-       解决方案：新增记录时如果不指定id，必须使用POST请求。OA
+       解决方案：新增记录时如果不指定id，必须使用POST请求。
+
+使用经验：
+    1、请求中的参数pretty=true，表示以易读的格式返回。
