@@ -71,3 +71,7 @@ ES和关系型数据类比
     bool:布尔查询
     	must:条件与and
 	    match：多个匹配条件
+
+MySQL增量迁移到ES:
+    参考链接：
+    	1、https://segmentfault.com/a/1190000014387486
