@@ -34,11 +34,12 @@ ES和关系型数据类比
     1、_cat:
     2、indices：
     3、_search：查询所有，在id的位置
+    4、_cluster：集群
 返回值：
     1、took：该操作的耗时（单位为毫秒）
     2、timed_out：是否超时
-    3、_shards：被索引的分片信息
-    	total：分片上索引到的数据量
+    3、_shards：分片信息
+    	total：分片个数（默认情况下，一个索引被分配5个主分片）
 	successful：成功索引的数据
 	skipped：
 	failed：
