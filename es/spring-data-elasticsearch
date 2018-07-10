@@ -1,0 +1,15 @@
+# spring-data-elasticsearch中的遇到的错误
+1、Initialization of bean failed; nested exception is java.lang.AbstractMethodError
+原因：Spring的版本太低;
+解决方案：需要升级Spring的版本到5.X.X+
+
+2、客户端报错：NoNodeAvailableException[None of the configured nodes are available，而服务器端无错误。
+原因：<elasticsearch:transport-client/>中配置的cluster-nodes、cluster-name有误；
+     其中：cluster-nodes=IP:PORT,port应该是transport.tcp.port对应的端口，而不是http.port的端口。
+     而服务端的IP可以是服务器的外网IP也可以是0.0.0.0。
+
+3、客户端报错：NoNodeAvailableException[None of the configured nodes are available。
+   服务器端报错： Received message from unsupported version: [5.5.0] minimal compatible version is: [5.6.0]
+原因：客户端版本比服务器端低。ES要求客户端的版本必须大于服务器端版本。
+解决方案：要么升级客户端版本，要么降低服务器端的版本。由于我的spring-data-elasticsearch已经是最高版本，
+          对应的elasticsearch版本是5.5.0，而我服务器端使用了高版本的6.2.0，所有我重新下载了5.5.0的es安装。
