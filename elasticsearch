@@ -76,3 +76,8 @@ ES和关系型数据类比
 MySQL增量迁移到ES:
     参考链接：
     	1、https://segmentfault.com/a/1190000014387486
+
+Spring整合ES中遇到的错误：
+	1、Initialization of bean failed; nested exception is java.lang.AbstractMethodError
+	
+	
