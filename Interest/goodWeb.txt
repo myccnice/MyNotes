@@ -3,3 +3,5 @@ https://leetcode.com/problemset/algorithms/
 http://www.acmerblog.com/category/basis/page/123
 2、ElasticSearch翻译文档地址
 https://es.xiaoleilu.com/
+3、销售技巧
+https://vip.open.163.com/courses/966
