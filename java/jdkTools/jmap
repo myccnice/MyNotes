@@ -1,5 +1,36 @@
 @see jmap 命令的实现原理解析->http://www.itboth.com/d/IjMjYj/jmap
-- jmap输出中class name非自定义类的说明：
+一、jmap -h
+Usage:
+    jmap [option] <pid>
+         (to connect to running process)
+    jmap [option] <executable <core>
+         (to connect to a core file)
+    jmap [option] [server_id@]<remote server IP or hostname>
+         (to connect to remote debug server)
+where <option> is one of:
+   <none>               to print same info as Solaris pmap
+   -heap                to print java heap summary
+   -histo[:live]        to print histogram of java object heap; if the "live"
+                        suboption is specified, only count live objects
+   -clstats             to print class loader statistics
+   -finalizerinfo       to print information on objects awaiting finalization
+   -dump:<dump-options> to dump java heap in hprof binary format
+           dump-options:
+                        live         dump only live objects; if not specified,all objects in the heap are dumped.
+                        format=b     binary format
+                        file=<file>  dump heap to <file>
+           Example: jmap -dump:live,format=b,file=heap.bin <pid>
+   -F                   force. Use with -dump:<dump-options> <pid> or -histo 
+   			to force a heap dump or histogram when <pid> does not respond.
+			The "live" suboption is not supported in this mode.
+   -h | -help           to print this help message
+   -J<flag>             to pass <flag> directly to the runtime system
+
+二、jmap -histo输出列说明
+占用空间排序  实例个数     占用空间    对象类名
+ num          #instances   #bytes      class name
+ ----------------------------------------------
+其中class name非自定义类的说明：
 BaseType CharacterType	Interpretation
 B	 byte		signed byte
 C	 char		Unicode character
@@ -11,4 +42,52 @@ L	 reference	an instance of class
 S	 short		signed short
 Z	 boolean	true or false
 [	 reference	one array dimension，[I表示int[]
+
+三、jmap -heap <pid>示例
+Attaching to process ID 26188, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.151-b12
+
+using thread-local object allocation.
+Parallel GC with 4 thread(s)
+
+Heap Configuration:	#堆内存初始化配置
+   MinHeapFreeRatio         = 0		#-XX:MinHeapFreeRatio设置JVM堆最小空闲比率
+   MaxHeapFreeRatio         = 100	#-XX:MaxHeapFreeRatio设置JVM堆最大空闲比率
+   MaxHeapSize              = 4164943872 (3972.0MB)	#-XX:MaxHeapSize=设置JVM堆的最大大小
+   NewSize                  = 87031808 (83.0MB)		#-XX:NewSize=设置JVM堆的‘新生代’的默认大小
+   MaxNewSize               = 1388314624 (1324.0MB)	#-XX:MaxNewSize=设置JVM堆的‘新生代’的最大大小
+   OldSize                  = 175112192 (167.0MB)	#-XX:OldSize=设置JVM堆的‘老生代’的大小
+   NewRatio                 = 2	#-XX:NewRatio=:‘新生代’和‘老生代’的大小比率
+   SurvivorRatio            = 8	#-XX:SurvivorRatio=设置年轻代中Eden区与Survivor区的大小比值
+   MetaspaceSize            = 21807104 (20.796875MB)
+   CompressedClassSpaceSize = 1073741824 (1024.0MB)
+   MaxMetaspaceSize         = 17592186044415 MB
+   G1HeapRegionSize         = 0 (0.0MB)
+
+Heap Usage:
+PS Young Generation	#新生代区内存分布，包含伊甸园区+1个Survivor区
+Eden Space:	#Eden区内存分布
+   capacity = 1181745152 (1127.0MB)
+   used     = 786729608 (750.283821105957MB)
+   free     = 395015544 (376.71617889404297MB)
+   66.57354224542654% used
+From Space:	#其中一个Survivor区的内存分布
+   capacity = 103809024 (99.0MB)
+   used     = 22526896 (21.483322143554688MB)
+   free     = 81282128 (77.51667785644531MB)
+   21.700325397529987% used
+To Space:	#另一个Survivor区的内存分布
+   capacity = 101187584 (96.5MB)
+   used     = 0 (0.0MB)
+   free     = 101187584 (96.5MB)
+   0.0% used
+PS Old Generation	#老年代内存分布
+   capacity = 448266240 (427.5MB)
+   used     = 321986616 (307.0703659057617MB)
+   free     = 126279624 (120.42963409423828MB)
+   71.82932535807292% used
+
+26436 interned Strings occupying 2296704 bytes.
 
