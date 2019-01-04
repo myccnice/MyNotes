@@ -1,0 +1,13 @@
+当发生OOM异常是dump出内存堆信息：
+
+1)linux tomcat 
+在catalina.sh中搜索cygwin=false，在cygwin=false之前增加
+JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$path"
+当发生OOM异常后就会在$path目录下dump出java_pidxxxx.hprof文件
+
+2）可执行jar包
+java -jar -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$path xx.jar
+
+3)eclipse配置jvm参数
+Windows -> Preferences -> Java -> Installed JREs
+选中你所使用的 JDK，然后点击 Edit，会出现JRE Definition界面可设置JVM参数
