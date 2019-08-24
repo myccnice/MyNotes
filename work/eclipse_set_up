@@ -11,3 +11,11 @@
     Window ->Preferences ->Java ->"Code Style" ->Formatter
     1、点击右边【Edit】按钮，在Indentation选项卡的General Settings中Tab policy，选择Space only；
     2、最上面的Profile name输入自定义的名称，点击最下面的【Apply】【OK】
+
+三、eclipse提示Spring ContextLoaderListener类或者其他的jar包中的类不存(前提是这些类的jar包是在项目下已存在)
+    1. 右键单击工程项目 ->点击 properties
+    2. 选择 Deployment Assembly
+    3. 点击 Add -> Java Build Path Entries -> Next
+    4. 选择 Maven Dependencies -> Finish -> Apply -> OK
+    5. Clean project and server. 重启server
+    刷新Server可以看到下面多一个Spring的包。
