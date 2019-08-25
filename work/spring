@@ -1,0 +1,4 @@
+1、使用场景:Spring-SpringMVC集成Spring-session-redis
+        按照官网(http://docs.spring.io/spring-session/docs/current/reference/html5/guides/httpsession.html)配置
+   主要报错：spring-session-redis check whether you have multiple ContextLoader* definitions in your web.xml
+   解决方案：http://www.cnblogs.com/jcli/p/4509612.html
