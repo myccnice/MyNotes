@@ -14,3 +14,6 @@ spring-cloud:http://blog.didispace.com/
 dubbo:http://blog.csdn.net/ZuoAnYinXiang/article/category/6142190
 在线教育：
 http://www.roncoo.com/
+
+## HikariCP
+  Spring Boot2.X默认的数据库连接池，号称最快的数据库连接池。里面进行了很多的优化。
