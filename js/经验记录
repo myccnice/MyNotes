@@ -1,0 +1,6 @@
+#2016-08-26
+1 我的项目里有一个select，会根据用户操作动态的为其增加删除一些option。在增加删除option的同时想要触发一个事件。
+  一开始想到change事件，但是没有效果。查询change事件的使用场景（用于监听表单元素值的修改，例如：输入域的value值，select的选中option的值等)。
+  最后多方查询到jquery提供了DOMNodeInserted DOMNodeRemoved这两个事件，可以监听元素html内容修改。
+  DOMNodeInserted：元素修改后触发；
+  DOMNodeRemoved：元素修改前触发。
