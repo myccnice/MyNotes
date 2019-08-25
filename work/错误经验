@@ -1,1 +1,24 @@
 ## 主要记录在工作中遇到的有意义的错误
+2016-08-12
+问题出现场景：
+    数据库为mysql，引擎是Innodb。在同一个service(同一个事务)中使用多线程update同一个表，导致多条更新操作卡住，很长时间才完成一批更新。
+当把多线程改为使用单线程更新后，操作瞬间完成。
+具体原理：UNDO
+
+2016-08-17
+问题出现场景：
+public class ServiceA {
+    public Message doSubmit(InternalOrderBean inOrder) {
+        InternalOrderBean order = baseDao.get(InternalOrderBean.class, orderId);
+        .....
+        ServiceB.saveRecord(orderId);
+    }
+
+}
+
+public class ServiceB{
+    public void saveRecord(long orderId) {
+        InternalOrderBean order = baseDao.get(InternalOrderBean.class, orderId);
+        // 在这个地方并没有使用到缓存，而是直接再次查询数据库。导致前一个方法修改的数据在本方法中无法获取到。
+    } 
+}
