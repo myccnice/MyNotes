@@ -1,0 +1,13 @@
+>>> https://blog.csdn.net/qq_36135928/article/details/84668341
+1、Spring源码导入缺少spring-cglib-repack-3.2.9.jar和spring-objensis-repack-3.0.1.jar
+解决方法：同转换为eclipse工程操作类似，进入下载后的spring源码包，执行以下命令：gradle cglibRepackJar 和 gradle objenesisRepackJar
+
+2、部分相关里有一些类找不到：比如spring-beans中的GroovyDynamicElementReader，原因的我的eclipse没有安装groovy插件
+>>> https://blog.csdn.net/qq_27645299/article/details/72900801
+解决方法：eclipse安装groovy插件
+
+3、找不到org.springframework.core.CoroutinesUtils类
+解决方法：使用git bash进入目录\spring-framework\spring-core\kotlin-coroutines，执行命令gradle build。
+		  执行完成后，改目录下会生成build文件夹，下面的libs会生成我们需要的kotlin-coroutines-x.x.x.BUILD-SNAPSHOT.jar包
+		  在eclipse里提示找不到CoroutinesUtils类的spring模块上
+		  右键properties -> java build path -> add jars -> 找到刚刚编译生成的jar包，选择确定
